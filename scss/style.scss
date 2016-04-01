@@ -9,14 +9,6 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: fauxbrick
 Tags:
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-fauxbrick is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
 @import "bootstrap-3.3.5/_bootstrap.scss";
@@ -29,18 +21,18 @@ $brand-primary: #06c;
 $font-family-sans-serif: 'Open Sans', sans-serif;
 $grid-gutter-width: 20px;
 
-$font-size-base:          16px;
+$font-size-base:              16px;
 @media (min-width: $screen-sm-min) {
 	$font-size-base:          14px;
 }
 
 
-$font-size-h1: round($font-size-base * 1.833, 3);
-$font-size-h2: round($font-size-base * 1.583, 3);
-$font-size-h3: round($font-size-base * 1.333, 3);
-$font-size-h4: round($font-size-base * 1, 3);
-$font-size-h5: round($font-size-base * 0.833, 3);
-$font-size-h6: round($font-size-base * 0.666, 3);
+$font-size-h1: round($font-size-base * 1.833);
+$font-size-h2: round($font-size-base * 1.583);
+$font-size-h3: round($font-size-base * 1.333);
+$font-size-h4: round($font-size-base * 1);
+$font-size-h5: round($font-size-base * 0.833);
+$font-size-h6: round($font-size-base * 0.666);
 
 img {
 	@extend .img-responsive;
@@ -83,7 +75,6 @@ header {
 		background: -o-linear-gradient(top,  #69aee7 0%,#4180b6 100%); /* Opera 11.10+ */
 		background: -ms-linear-gradient(top,  #69aee7 0%,#4180b6 100%); /* IE10+ */
 		background: linear-gradient(to bottom,  #69aee7 0%,#4180b6 100%); /* W3C */
-		filter: progid:DXImageTransform.Microsoft@include gradient( startColorstr='#69aee7', endColorstr='#4180b6',GradientType=0 ); /* IE6-8 */
 
 		color: $white;
 		text-align: center;
@@ -125,7 +116,6 @@ footer#colophon {
 	background: -o-linear-gradient(top,  #fefefe 0%,#e9e9e9 100%); /* Opera 11.10+ */
 	background: -ms-linear-gradient(top,  #fefefe 0%,#e9e9e9 100%); /* IE10+ */
 	background: linear-gradient(to bottom,  #fefefe 0%,#e9e9e9 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft@include gradient( startColorstr='#fefefe', endColorstr='#e9e9e9',GradientType=0 ); /* IE6-8 */
 
 	@include border-radius($border-radius-large);
 	min-height: 64px;
@@ -147,7 +137,7 @@ h3,
 h4,
 h5,
 h6 {
-	margin-top: round($font-size-base * 2, 3);
+	margin-top: round($font-size-base * 2);
 	margin-bottom: 0px;
 	font-weight: bold;
 	padding: 0;
