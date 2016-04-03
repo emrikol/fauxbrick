@@ -167,3 +167,9 @@ function fauxbrick_wpkses_allowed_html($allowed, $context){
 	return $allowed;
 }
 add_filter('wp_kses_allowed_html', 'fauxbrick_wpkses_allowed_html', 10, 2);
+
+function fauxbrick_responsive_oembed( $html ){
+	$html = preg_replace( '/(width|height)="\d*"\s/', '', $html );
+	return'<div class="embed-responsive embed-responsive-16by9">' . $html . '</div>';
+}
+add_filter( 'embed_oembed_html','fauxbrick_responsive_oembed', 10, 1 );

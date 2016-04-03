@@ -11,6 +11,9 @@ Text Domain: fauxbrick
 Tags:
 */
 
+$code-bg: transparent;
+$code-color: initial;
+
 @import "bootstrap-3.3.5/_bootstrap.scss";
 @import "underscores/style.scss";
 @import "mixins.scss";
@@ -19,7 +22,9 @@ $white: #fff;
 $black: #000;
 $brand-primary: #06c;
 $font-family-sans-serif: 'Open Sans', sans-serif;
+$font-family-monospace: 'Courier New', Courier, Fixed;
 $grid-gutter-width: 20px;
+
 
 $font-size-base:              16px;
 @media (min-width: $screen-sm-min) {
@@ -36,6 +41,15 @@ $font-size-h6: round($font-size-base * 0.666);
 
 img {
 	@extend .img-responsive;
+
+	&.alignleft {
+		margin: 0 11px 6px 0;
+		display: inline;
+	}
+	&.alignright {
+		margin: 0 0 6px 11px;
+		display: inline;
+	}
 }
 
 html.ie9 {
@@ -167,6 +181,21 @@ h3 {
 }
 
 #sidebar {
+	form[role="search"],
+	#searchform,
+	.search-form {
+		text-align: center;
+		#s,
+		input[type="search"] {
+			border: 1px solid #a9a9a9;
+			font-weight: normal;
+			width: 100%;
+			padding: 2px;
+		}
+	}
+
+	#searchsubmit,
+
 	ul {
 		ul li:before {
 			content: "\00BB \0020";
@@ -203,6 +232,11 @@ h3 {
 }
 
 .post {
+	&.post-password-required {
+		label {
+			font-weight: normal;
+		}
+	}
 	&.sticky {
 		background-color: #f7f7f7;
 		padding: 0 10px 10px;
@@ -212,9 +246,15 @@ h3 {
 		}
 	}
 
+	.gallery-icon {
+		img {
+			margin: 0 auto;
+		}
+	}
 	.entry-title {
 		a {
 			color: $black;
+			word-wrap: break-word;
 		}
 	}
 
@@ -296,6 +336,9 @@ h3 {
 		//}
 
 		.post-thumbnail {
+			img {
+				margin: 0 auto;
+			}
 			margin-top: 20px;
 			display: block;
 		}
@@ -390,7 +433,6 @@ border: 1px solid #ddd;
 	text-align: center;
 	background-color: #f3f3f3;
 	padding: 4px;
-	margin: 10px;
 	@include border-radius(3px);
 
 	.wp-caption-text {
@@ -418,4 +460,13 @@ border: 1px solid #ddd;
 
 .post-password-form {
 	text-align: center;
+}
+
+acronym, abbr, abbr[title], abbr[data-original-title] {
+	border-bottom: 1px dashed #999;
+}
+
+code {
+	font-size: 100%;
+	padding: 0px;
 }
