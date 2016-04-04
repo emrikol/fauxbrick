@@ -163,10 +163,10 @@ blockquote {
 	color: #777;
 }
 
-/*h2.pagetitle {
+h2.pagetitle {
 	margin-top: 30px;
 	text-align: center;
-}*/
+}
 
 h3 {
 	.comments {
@@ -469,4 +469,18 @@ acronym, abbr, abbr[title], abbr[data-original-title] {
 code {
 	font-size: 100%;
 	padding: 0px;
+}
+
+body.archive {
+	.page-header {
+		padding: 0px;
+		margin: 0 0 40px;
+		border: none;
+	}
+}
+
+.navigation {
+	display: block;
+	text-align: center;
+	margin: 10px 40px 60px 40px;
 }

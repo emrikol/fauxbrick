@@ -2440,10 +2440,10 @@ blockquote {
   margin-left: 10px;
   color: #777; }
 
-/*h2.pagetitle {
-	margin-top: 30px;
-	text-align: center;
-}*/
+h2.pagetitle {
+  margin-top: 30px;
+  text-align: center; }
+
 h3 .comments {
   margin: 40px auto 20px; }
 
@@ -2668,5 +2668,15 @@ acronym, abbr, abbr[title], abbr[data-original-title] {
 code {
   font-size: 100%;
   padding: 0px; }
+
+body.archive .page-header {
+  padding: 0px;
+  margin: 0 0 40px;
+  border: none; }
+
+.navigation {
+  display: block;
+  text-align: center;
+  margin: 10px 40px 60px 40px; }
 
 /*# sourceMappingURL=style.css.map */
