@@ -5,12 +5,11 @@
  *
  * You can add an optional custom header image to header.php like so ...
  *
- *	<?php if ( get_header_image() ) : ?>
- *	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
- *		<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
- *	</a>
- *	<?php endif; // End header image check. ?>
- *
+ *  <?php if ( get_header_image() ) : ?>
+ *  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+ *      <img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
+ *  </a>
+ *  <?php endif; // End header image check. ?>
  *
  * @package fauxbrick
  */
@@ -37,24 +36,24 @@ function fauxbrick_custom_header_setup() {
 add_action( 'after_setup_theme', 'fauxbrick_custom_header_setup' );
 
 if ( ! function_exists( 'fauxbrick_header_style' ) ) :
-/**
- * Styles the header image and text displayed on the blog
- *
- * @see fauxbrick_custom_header_setup().
- */
-function fauxbrick_header_style() {
-	$header_text_color = get_header_textcolor();
+	/**
+	 * Styles the header image and text displayed on the blog
+	 *
+	 * @see fauxbrick_custom_header_setup().
+	 */
+	function fauxbrick_header_style() {
+		$header_text_color = get_header_textcolor();
 
-	// If no custom options for text are set, let's bail
-	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	if ( HEADER_TEXTCOLOR === $header_text_color ) {
-		return;
-	}
+		// If no custom options for text are set, let's bail
+		// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
+		if ( HEADER_TEXTCOLOR === $header_text_color ) {
+			return;
+		}
 
-	// If we get this far, we have custom styles. Let's do this.
-	?>
-	<style type="text/css">
-	<?php
+		// If we get this far, we have custom styles. Let's do this.
+		?>
+		<style type="text/css">
+		<?php
 		// Has the text been hidden?
 		if ( 'blank' === $header_text_color ) :
 	?>
@@ -74,17 +73,17 @@ function fauxbrick_header_style() {
 	<?php endif; ?>
 	</style>
 	<?php
-}
+	}
 endif; // fauxbrick_header_style
 
 if ( ! function_exists( 'fauxbrick_admin_header_style' ) ) :
-/**
- * Styles the header image displayed on the Appearance > Header admin panel.
- *
- * @see fauxbrick_custom_header_setup().
- */
-function fauxbrick_admin_header_style() {
-?>
+	/**
+	 * Styles the header image displayed on the Appearance > Header admin panel.
+	 *
+	 * @see fauxbrick_custom_header_setup().
+	 */
+	function fauxbrick_admin_header_style() {
+	?>
 	<style type="text/css">
 		.appearance_page_custom-header #headimg {
 			border: none;
@@ -101,19 +100,19 @@ function fauxbrick_admin_header_style() {
 		#headimg img {
 		}
 	</style>
-<?php
-}
+	<?php
+	}
 endif; // fauxbrick_admin_header_style
 
 if ( ! function_exists( 'fauxbrick_admin_header_image' ) ) :
-/**
- * Custom header image markup displayed on the Appearance > Header admin panel.
- *
- * @see fauxbrick_custom_header_setup().
- */
-function fauxbrick_admin_header_image() {
-	$style = sprintf( 'color:#%s;', get_header_textcolor() );
-?>
+	/**
+	 * Custom header image markup displayed on the Appearance > Header admin panel.
+	 *
+	 * @see fauxbrick_custom_header_setup().
+	 */
+	function fauxbrick_admin_header_image() {
+		$style = sprintf( 'color:#%s;', get_header_textcolor() );
+	?>
 	<div id="headimg">
 		<h1 class="displaying-header-text"><a id="name" style="<?php echo esc_attr( $style ); ?>" onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a></h1>
 		<div class="displaying-header-text" id="desc" style="<?php echo esc_attr( $style ); ?>"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></div>
@@ -122,5 +121,5 @@ function fauxbrick_admin_header_image() {
 		<?php endif; ?>
 	</div>
 <?php
-}
+	}
 endif; // fauxbrick_admin_header_image

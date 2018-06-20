@@ -127,27 +127,9 @@ module.exports = function( grunt ) {
 			}
 		},
 
-		'sftp-deploy': {
-			build: {
-				auth: {
-					host: 'sftp.pressable.com',
-					port: 22,
-					authKey: 'key1'
-				},
-				cache: 'sftpCache.json',
-				src: '/Users/emrikol/source/fauxbrick',
-				dest: '/onaradyne/wp-content/themes/fauxbrick',
-				exclusions: ['/Users/emrikol/source/fauxbrick/**/.DS_Store', '/Users/emrikol/source/fauxbrick/**/Thumbs.db', '/Users/emrikol/source/fauxbrick/node_modules', '/Users/emrikol/source/fauxbrick/.git'],
-				serverSep: '/',
-				localSep: '/',
-				concurrency: 4,
-				progress: true
-			}
-		}
-
 	} );
 
-	require('load-grunt-tasks')(grunt);
+	require( 'load-grunt-tasks' )( grunt );
 
 	grunt.registerTask( 'default', ['concat', 'uglify', 'sass', 'cssmin' ] );
 	grunt.registerTask( 'css', ['sass', 'autoprefixer', 'cssmin'] );

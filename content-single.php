@@ -1,9 +1,3 @@
-<?php
-/**
- * @package fauxbrick
- */
-?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> data-post-format="<?php echo esc_attr( get_post_format() ); ?>">
 	<?php
 		// Post thumbnail.
