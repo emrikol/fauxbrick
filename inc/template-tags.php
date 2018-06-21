@@ -126,7 +126,7 @@ if ( ! function_exists( 'fauxbrick_entry_footer' ) ) :
 			comments_popup_link( esc_html__( 'No Comments &raquo;', 'fauxbrick' ), esc_html__( '1 Comment &raquo;', 'fauxbrick' ), esc_html__( '% Comments &raquo;', 'fauxbrick' ) );
 			echo '</span>';
 		} elseif ( ! is_single() && ! post_password_required() && ( ! comments_open() ) ) {
-			echo '<span> | Comments Closed</span>';
+			echo '<span> | Comments Off</span>';
 		}
 
 	}

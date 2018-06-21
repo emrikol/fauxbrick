@@ -53,7 +53,7 @@ module.exports = function( grunt ) {
 					unixNewlines: true
 				},
 				files: {
-					'style.css': 'scss/style.scss',
+					'style.css': 'scss/style.scss'
 				}
 			}
 		},
